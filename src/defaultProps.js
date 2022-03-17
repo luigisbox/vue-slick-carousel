@@ -9,7 +9,7 @@ export const props = {
   centerPadding: { type: String, default: '50px' },
   cssEase: { type: String, default: 'ease' },
   dots: { type: Boolean, default: false },
-  dotsClass: { type: String, default: 'slick-dots' },
+  dotsClass: { type: String, default: 'lbxslick-dots' },
   draggable: { type: Boolean, default: true },
   edgeFriction: { type: Number, default: 0.35 },
   fade: { type: Boolean, default: false },

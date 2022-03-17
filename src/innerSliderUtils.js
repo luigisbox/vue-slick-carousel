@@ -394,7 +394,7 @@ export const getSlideCount = spec => {
   if (spec.swipeToSlide) {
     let swipedSlide
     const slickList = spec.listRef
-    const slides = slickList.querySelectorAll('.slick-slide')
+    const slides = slickList.querySelectorAll('.lbxslick-slide')
     Array.from(slides).every(slide => {
       if (!spec.vertical) {
         if (

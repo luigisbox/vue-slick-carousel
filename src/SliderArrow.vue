@@ -6,7 +6,7 @@ export default {
   name: 'SliderArrow',
   props: [...PROP_KEYS.ARROW, 'type'],
   render() {
-    let classes = { 'slick-arrow': true }
+    let classes = { 'lbxslick-arrow': true }
     let clickable = true
     let arrow
     let option = {
@@ -14,12 +14,12 @@ export default {
       slideCount: this.slideCount,
     }
     if (this.type === 'previous') {
-      classes['slick-prev'] = true
+      classes['lbxslick-prev'] = true
       if (
         !this.infinite &&
         (this.currentSlide === 0 || this.slideCount <= this.slidesToShow)
       ) {
-        classes['slick-disabled'] = true
+        classes['lbxslick-disabled'] = true
         clickable = false
       }
 
@@ -32,9 +32,9 @@ export default {
         </button>
       )
     } else {
-      classes['slick-next'] = true
+      classes['lbxslick-next'] = true
       if (!canGoNext(this.$props)) {
-        classes['slick-disabled'] = true
+        classes['lbxslick-disabled'] = true
         clickable = false
       }
 
@@ -62,7 +62,7 @@ export default {
 }
 </script>
 <style scoped>
-.slick-arrow.slick-hidden {
+.lbxslick-arrow.lbxslick-hidden {
   display: none;
 }
 </style>

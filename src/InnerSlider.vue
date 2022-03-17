@@ -106,7 +106,7 @@ export default {
     })
     this.ro.observe(this.$refs.list)
     Array.prototype.forEach.call(
-      this.$refs.list.querySelectorAll('.slick-slide'),
+      this.$refs.list.querySelectorAll('.lbxslick-slide'),
       slide => {
         slide.onfocus = this.pauseOnFocus ? this.onSlideFocus : null
         slide.onblur = this.pauseOnFocus ? this.onSlideBlur : null
@@ -335,7 +335,7 @@ export default {
       this.animationEndCallback = undefined
     },
     checkImagesLoad() {
-      let images = this.$refs.list.querySelectorAll('.slick-slide img')
+      let images = this.$refs.list.querySelectorAll('.lbxslick-slide img')
       let imagesCount = images.length,
         loadedCount = 0
       Array.prototype.forEach.call(images, image => {
@@ -582,9 +582,9 @@ export default {
   },
   render() {
     const className = {
-      'slick-slider': true,
-      'slick-initialized': true,
-      'slick-vertical': this.vertical,
+      'lbxslick-slider': true,
+      'lbxslick-initialized': true,
+      'lbxslick-vertical': this.vertical,
     }
     let trackProps = extractObject(this.spec, PROP_KEYS.TRACK)
     trackProps = filterUndefined({
@@ -684,7 +684,7 @@ export default {
         {!this.unslick ? prevArrow : ''}
         <div
           ref="list"
-          class={'slick-list'}
+          class={'lbxslick-list'}
           {...{ on: listOn }}
           style={listStyle}>
           <SliderTrack
@@ -703,7 +703,7 @@ export default {
 }
 </script>
 <style scoped>
-.slick-slider {
+.lbxslick-slider {
   position: relative;
 
   display: block;
@@ -720,7 +720,7 @@ export default {
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
-.slick-list {
+.lbxslick-list {
   position: relative;
 
   display: block;
@@ -735,10 +735,10 @@ export default {
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.slick-list:focus {
+.lbxslick-list:focus {
   outline: none;
 }
-.slick-list.dragging {
+.lbxslick-list.dragging {
   cursor: pointer;
   cursor: hand;
 }

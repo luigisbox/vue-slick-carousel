@@ -33,11 +33,11 @@ const getSlideClasses = spec => {
   }
   let slickCurrent = index === spec.currentSlide
   return {
-    'slick-slide': true,
-    'slick-active': slickActive,
-    'slick-center': slickCenter,
-    'slick-cloned': slickCloned,
-    'slick-current': slickCurrent, // dubious in case of RTL
+    'lbxslick-slide': true,
+    'lbxslick-active': slickActive,
+    'lbxslick-center': slickCenter,
+    'lbxslick-cloned': slickCloned,
+    'lbxslick-current': slickCurrent, // dubious in case of RTL
   }
 }
 
@@ -137,7 +137,7 @@ export default {
             attrs: {
               tabIndex: '-1',
               'data-index': index,
-              'aria-hidden': `${!slideClasses['slick-active']}`,
+              'aria-hidden': `${!slideClasses['lbxslick-active']}`,
             },
             childOnClickOptions,
           }),
@@ -167,7 +167,7 @@ export default {
                 attrs: {
                   tabIndex: '-1',
                   'data-index': key,
-                  'aria-hidden': `${!slideClasses['slick-active']}`,
+                  'aria-hidden': `${!slideClasses['lbxslick-active']}`,
                 },
                 childOnClickOptions,
               }),
@@ -188,7 +188,7 @@ export default {
                 attrs: {
                   tabIndex: '-1',
                   'data-index': key,
-                  'aria-hidden': `${!slideClasses['slick-active']}`,
+                  'aria-hidden': `${!slideClasses['lbxslick-active']}`,
                 },
                 childOnClickOptions,
               }),
@@ -208,7 +208,7 @@ export default {
     const slides = this.renderSlides(this.$props, this.$slots.default)
     return (
       <div
-        class={{ 'slick-track': true, 'slick-center': this.$props.centerMode }}
+        class={{ 'lbxslick-track': true, 'lbxslick-center': this.$props.centerMode }}
         style={this.trackStyle}>
         {slides}
       </div>
@@ -217,7 +217,7 @@ export default {
 }
 </script>
 <style scoped>
-.slick-track {
+.lbxslick-track {
   position: relative;
   top: 0;
   left: 0;
@@ -230,48 +230,48 @@ export default {
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.slick-track.slick-center {
+.lbxslick-track.lbxslick-center {
   margin-left: auto;
   margin-right: auto;
 }
-.slick-track:before,
-.slick-track:after {
+.lbxslick-track:before,
+.lbxslick-track:after {
   display: table;
 
   content: '';
 }
-.slick-track:after {
+.lbxslick-track:after {
   clear: both;
 }
-.slick-loading .slick-track {
+.lbxslick-loading .lbxslick-track {
   visibility: hidden;
 }
-.slick-slide {
+.lbxslick-slide {
   display: none;
   float: left;
 
   height: 100%;
   min-height: 1px;
 }
-[dir='rtl'] .slick-slide {
+[dir='rtl'] .lbxslick-slide {
   float: right;
 }
-.slick-slide img {
+.lbxslick-slide img {
   display: block;
 }
-.slick-slide.slick-loading img {
+.lbxslick-slide.lbxslick-loading img {
   display: none;
 }
-.slick-slide.dragging img {
+.lbxslick-slide.dragging img {
   pointer-events: none;
 }
-.slick-initialized .slick-slide {
+.lbxslick-initialized .lbxslick-slide {
   display: block;
 }
-.slick-loading .slick-slide {
+.lbxslick-loading .lbxslick-slide {
   visibility: hidden;
 }
-.slick-vertical .slick-slide {
+.lbxslick-vertical .lbxslick-slide {
   display: block;
 
   height: auto;

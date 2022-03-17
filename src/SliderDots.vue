@@ -37,7 +37,7 @@ export default {
       let leftBound = i * this.slidesToScroll
       let rightBound = i * this.slidesToScroll + (this.slidesToScroll - 1)
       let className = {
-        'slick-active':
+        'lbxslick-active':
           this.currentSlide >= leftBound && this.currentSlide <= rightBound,
       }
 
